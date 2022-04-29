@@ -1,4 +1,4 @@
-import React, { useRef,useState } from 'react'
+import React, { useRef, useState } from 'react'
 import { Form, Button, Card, Alert } from 'react-bootstrap'
 import { useAuth } from '../context/AuthContext'
 
@@ -6,7 +6,7 @@ function SignIn() {
     const emailRef = useRef()
     const passwordRef = useRef()
     const passwordConfirmRef = useRef()
-    const { signUp } = useAuth()
+    const { currentUser, signUp } = useAuth()
     const [error, setError] = useState("")
     const [laoding, setLoading] = useState(false)
 
@@ -35,6 +35,7 @@ function SignIn() {
                     <h2 className='text-center mb-4'>
                         Sign Up
                     </h2>
+                    <p>{currentUser}</p>
                     {error && <Alert variant='danger'>{error}</Alert>}
                     <Form onSubmit={handleSubmit}>
                         <Form.Group id="email">
