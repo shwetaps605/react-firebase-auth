@@ -6,7 +6,7 @@ function SignIn() {
     const emailRef = useRef()
     const passwordRef = useRef()
     const passwordConfirmRef = useRef()
-    const { currentUser, signUp } = useAuth()
+    const { signUp } = useAuth()
     const [error, setError] = useState("")
     const [loading, setLoading] = useState(false)
 
@@ -36,7 +36,6 @@ function SignIn() {
                     <h2 className='text-center mb-4'>
                         Sign Up
                     </h2>
-                    <p>{currentUser && currentUser.email}</p>
                     {error && <Alert variant='danger'>{error}</Alert>}
                     <Form onSubmit={handleSubmit}>
                         <Form.Group id="email">

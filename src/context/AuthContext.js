@@ -11,6 +11,7 @@ export const AuthContextProvider = ({children}) => {
 
 
     const [currentUser, setCurrentUser] = useState()
+    const [isLoading, setIsLoading] = useState(true)
 
     const signUp = (email,password) => {
         //the following func returns a promise 
@@ -24,6 +25,7 @@ export const AuthContextProvider = ({children}) => {
             {
                 const uid = user.uid
                 setCurrentUser(user)
+                setIsLoading(false)
             }
         })
 
@@ -37,7 +39,7 @@ export const AuthContextProvider = ({children}) => {
 
   return (
     <AuthContext.Provider value={value}>
-        {children}
+        {!isLoading && children}
     </AuthContext.Provider>
   )
 }
