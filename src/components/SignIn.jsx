@@ -8,7 +8,7 @@ function SignIn() {
     const passwordConfirmRef = useRef()
     const { currentUser, signUp } = useAuth()
     const [error, setError] = useState("")
-    const [laoding, setLoading] = useState(false)
+    const [loading, setLoading] = useState(false)
 
     async function handleSubmit(e) {
         e.preventDefault()
@@ -24,6 +24,7 @@ function SignIn() {
 
         } catch (err) {
             setError("Failed to create an account")
+            console.log(err)
         }
         setLoading(false)
     }
@@ -35,7 +36,7 @@ function SignIn() {
                     <h2 className='text-center mb-4'>
                         Sign Up
                     </h2>
-                    <p>{currentUser}</p>
+                    <p>{currentUser && currentUser.email}</p>
                     {error && <Alert variant='danger'>{error}</Alert>}
                     <Form onSubmit={handleSubmit}>
                         <Form.Group id="email">
@@ -63,7 +64,7 @@ function SignIn() {
                             </Form.Control>
                         </Form.Group>
 
-                        <Button disabled={laoding} className='w-100' type='submit'>
+                        <Button disabled={loading} className='w-100' type='submit'>
                             Sign Up
                         </Button>
 
