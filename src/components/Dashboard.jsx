@@ -3,9 +3,7 @@ import { Card, Button, Alert } from "react-bootstrap"
 import { useAuth } from "../context/AuthContext"
 import { Link, useNavigate} from "react-router-dom"
 
-
 function Dashboard() {
-
   const [error, setError] = useState("")
   const { currentUser, logOut } = useAuth()
   const navigate = useNavigate()

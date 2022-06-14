@@ -16,7 +16,6 @@ function SignIn() {
         e.preventDefault()
         if (passwordRef.current.value !== passwordConfirmRef.current.value) {
             setError("Password does not match")
-            console.log("Password does not match")
             return
         }
         try {
@@ -26,7 +25,6 @@ function SignIn() {
             navigate("/", { replace: true})
         } catch (err) {
             setError("Failed to create an account")
-            console.log(err)
         }
         setLoading(false)
     }
