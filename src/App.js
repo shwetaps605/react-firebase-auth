@@ -11,17 +11,19 @@ function App() {
 
     <Container className='d-flex align-items-center justify-content-center'
       style = {{ minHeight:"100vh"}}>
+        
       <div>App is rendering!</div>
+
       <div className='w-100' style={{maxWidth:"400px"}}>
-        <Router>
+        {/* <Router>
           <AuthContextProvider>
           <Routes>
             <Route path="login" element = { <LogIn/>}></Route>
-            <Route path="/" element = { <Dashboard/> } ></Route>
+            <Route path="/" element = { <SignIn/> } ></Route>
             <Route path="signin" element={ <SignIn/> }></Route>
           </Routes>
         </AuthContextProvider>
-        </Router>
+        </Router> */}
       </div>
     </Container>
   );

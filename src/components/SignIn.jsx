@@ -4,34 +4,37 @@ import { useAuth } from '../context/AuthContext'
 import { Link, useNavigate } from 'react-router-dom'
 
 function SignIn() {
-    const emailRef = useRef()
-    const passwordRef = useRef()
-    const passwordConfirmRef = useRef()
-    const { signUp } = useAuth()
-    const [error, setError] = useState("")
-    const [loading, setLoading] = useState(false)
-    const navigate = useNavigate()
+    // const emailRef = useRef()
+    // const passwordRef = useRef()
+    // const passwordConfirmRef = useRef()
+    // const { signUp } = useAuth()
+    // const [error, setError] = useState("")
+    // const [loading, setLoading] = useState(false)
+    // const navigate = useNavigate()
 
-    async function handleSubmit(e) {
-        e.preventDefault()
-        if (passwordRef.current.value !== passwordConfirmRef.current.value) {
-            setError("Password does not match")
-            return
-        }
-        try {
-            setError("")
-            setLoading(true)
-            await signUp(emailRef.current.value, passwordRef.current.value)
-            navigate("/", { replace: true})
-        } catch (err) {
-            setError("Failed to create an account")
-        }
-        setLoading(false)
-    }
+    // async function handleSubmit(e) {
+    //     e.preventDefault()
+    //     if (passwordRef.current.value !== passwordConfirmRef.current.value) {
+    //         setError("Password does not match")
+    //         return
+    //     }
+    //     try {
+    //         setError("")
+    //         setLoading(true)
+    //         await signUp(emailRef.current.value, passwordRef.current.value)
+    //         navigate("/", { replace: true})
+    //     } catch (err) {
+    //         setError("Failed to create an account")
+    //     }
+    //     setLoading(false)
+    // }
 
     return (
         <>
-            <Card>
+            <div>
+                SIgn In component
+            </div>
+            {/* <Card>
                 <Card.Body>
                     <h2 className='text-center mb-4'>
                         Sign Up
@@ -72,7 +75,7 @@ function SignIn() {
             </Card>
             <div className='w-100 text-center mt-2'>
                     Already have an account ? <Link to="/login">Log In</Link>
-            </div>
+            </div> */}
         </>
     )
 }
